@@ -1,0 +1,228 @@
+time,elapsed_seconds,message
+2022-05-06 19:07:54,2.449e-05,PEST++ performance logger started
+2022-05-06 19:07:54,0.000309568,starting to process control file
+2022-05-06 19:07:54,0.0089795,finished processing control file
+2022-05-06 19:07:54,0.00319399,initializing
+2022-05-06 19:07:54,0.000141398,using glm algorithm
+2022-05-06 19:07:54,2.4815e-05,using REDSVD for truncated svd solve
+2022-05-06 19:07:54,1.0665e-05,maxsing: 10000000
+2022-05-06 19:07:54,1.1565e-05,eigthresh:  1e-06
+2022-05-06 19:07:54,9.73e-06,initializing localizer
+2022-05-06 19:07:54,1.1069e-05,not using localization
+2022-05-06 19:07:54,1.4694e-05,using lambda multipliers: 
+2022-05-06 19:07:54,1.1839e-05,using lambda scaling factors: 
+2022-05-06 19:07:54,1.0834e-05,acceptable phi factor:  1.05
+2022-05-06 19:07:54,1.0856e-05,lambda increase factor:  10
+2022-05-06 19:07:54,1.0661e-05,lambda decrease factor:  0.75
+2022-05-06 19:07:54,1.0253e-05,max run fail:  1
+2022-05-06 19:07:54,0.000112875,initializing prior parameter covariance matrix
+2022-05-06 19:07:54,5.954e-06,initializing parcov
+2022-05-06 19:07:54,0.00141545,parcov loaded   from file prior_cov_matrix.jcb
+2022-05-06 19:07:54,0.00232857,initializing observation noise covariance matrix
+2022-05-06 19:07:54,0.00178081,obscov loaded  from observation weights
+2022-05-06 19:07:54,0.000592387,using reg_factor:  0
+2022-05-06 19:07:54,1.3145e-05,drawing parameter realizations:  200
+2022-05-06 19:07:54,0.000356234,parameters not grouped by parameter groups, reordering par ensemble
+2022-05-06 19:07:54,0.00261424,making standard normal draws
+2022-05-06 19:07:54,0.0018559,...drawing by group
+
+2022-05-06 19:07:54,0.000733522,thread: 0 - min variance for group PARGP: 1
+2022-05-06 19:07:54,9.954e-06,thread: 0 - Randomized Eigen decomposition of full cov for 5 element matrix
+
+2022-05-06 19:07:54,0.00260145,thread: 0 - min variance for group HK_PP: 0.330921
+2022-05-06 19:07:54,1.4097e-05,thread: 0 - Randomized Eigen decomposition of full cov for 53 element matrix
+
+2022-05-06 19:07:55,0.0463278,draw thread: 0 processed 0 groups
+2022-05-06 19:07:55,6.6246e-05,checking realization for invalid values
+2022-05-06 19:07:55,0.000899922,resizing reals matrix
+2022-05-06 19:07:55,0.00014973,filling reals matrix and adding mean values
+2022-05-06 19:07:55,0.0617663,not using prior parameter covariance matrix scaling
+2022-05-06 19:07:55,1.9196e-05,drawing observation noise realizations:  200
+2022-05-06 19:07:55,0.0010388,making standard normal draws
+2022-05-06 19:07:55,0.00498111,scaling by std
+2022-05-06 19:07:55,0.000563835,checking realization for invalid values
+2022-05-06 19:07:55,0.00241627,resizing reals matrix
+2022-05-06 19:07:55,0.000530076,filling reals matrix and adding mean values
+2022-05-06 19:07:55,0.00303179,adding 'base' parameter values to ensemble
+2022-05-06 19:07:55,0.00112536,adding 'base' observation values to ensemble
+2022-05-06 19:07:55,0.00252897,checking for denormal values in pe
+2022-05-06 19:07:55,0.056893,saved initial parameter ensemble to  pestpp_ies.0.par.csv
+2022-05-06 19:07:55,1.5798e-05,checking for denormal values in obs + noise ensemble
+2022-05-06 19:07:55,0.0978699,saved obs+noise observation ensemble (obsval + noise realizations) to  pestpp_ies.obs+noise.csv
+2022-05-06 19:07:55,6.1646e-05,setting weights ensemble from control file weights
+2022-05-06 19:07:55,0.00100861,checking for denormal values in weights ensemble
+2022-05-06 19:07:55,0.00251114,using subset in lambda testing, number of realizations used in subset testing:  4
+2022-05-06 19:07:55,1.179e-05,subset how:  RANDOM
+2022-05-06 19:07:55,0.00157031,centering on ensemble mean vector
+2022-05-06 19:07:55,1.2446e-05,running initial ensemble
+2022-05-06 19:07:55,1.0924e-05,running initial ensemble of size 200
+2022-05-06 19:07:55,2.241e-05,queuing 200 runs
+2022-05-06 19:07:55,0.0413035,making runs
+2022-05-06 19:44:24,2189.4,processing runs
+2022-05-06 19:44:24,0.0454134,the following par:obs realization runs failed: 15:15,16:16,20:20,45:45,49:49,50:50,59:59,68:68,70:70,75:75,83:83,103:103,105:105,117:117,121:121,126:126,138:138,144:144,160:160,161:161,163:163,191:191,
+2022-05-06 19:44:24,2.8772e-05,dropping failed realizations
+2022-05-06 19:44:24,0.00205766,the following 22 par:obs realization runs failed during evaluation of the initial parameter ensemble:
+15:15
+16:16
+20:20
+45:45
+49:49
+50:50
+59:59
+68:68
+70:70
+75:75
+83:83
+103:103
+105:105
+117:117
+121:121
+126:126
+138:138
+144:144
+160:160
+161:161
+163:163
+191:191
+
+2022-05-06 19:44:24,0.0851256,saved initial obs ensemble to pestpp_ies.0.obs.csv
+2022-05-06 19:44:24,0.00501546,calc pre-drop phi
+2022-05-06 19:44:24,0.0142913,pre-drop initial phi summary
+2022-05-06 19:44:24,0.00176174,checking for prior-data conflict...
+2022-05-06 19:44:24,0.00917098,calc initial phi
+2022-05-06 19:44:24,0.0138593,initial phi summary
+2022-05-06 19:44:25,0.404266,using full (MAP) update solution
+2022-05-06 19:44:25,0.000114091,current lambda: 100
+2022-05-06 19:44:25,1.2639e-05,initialization complete
+2022-05-06 19:44:25,5.5597e-05,starting solve for iteration: 1
+2022-05-06 19:44:25,6.742e-06,starting solve for iteration: 1
+2022-05-06 19:44:25,1.2791e-05,current lambda:  100
+2022-05-06 19:44:25,9.235e-06,reordering variables in pe
+2022-05-06 19:44:25,0.00369318,starting REDSVD
+2022-05-06 19:44:25,0.101124,triming REDSVD components to 58elements
+2022-05-06 19:44:25,0.000263121,done REDSVD
+2022-05-06 19:44:25,0.00198166,preparing EnsembleSolver
+2022-05-06 19:44:25,0.00153325,preparing fast-look containers for threaded localization solve
+2022-05-06 19:44:25,0.0197717,starting calcs for glm factor 10
+2022-05-06 19:44:25,1.5354e-05,see .log file for more details
+2022-05-06 19:44:25,0.000786669,upgrade thread progress: 0 of 1 parts done
+2022-05-06 19:44:26,1.55932,finished calcs for: 10
+2022-05-06 19:44:26,3.7018e-05,starting calcs for glm factor 100
+2022-05-06 19:44:26,9.729e-06,see .log file for more details
+2022-05-06 19:44:26,0.000865053,upgrade thread progress: 0 of 1 parts done
+2022-05-06 19:44:28,1.5581,finished calcs for: 100
+2022-05-06 19:44:28,3.3921e-05,starting calcs for glm factor 1000
+2022-05-06 19:44:28,1.0216e-05,see .log file for more details
+2022-05-06 19:44:28,0.000794075,upgrade thread progress: 0 of 1 parts done
+2022-05-06 19:44:30,1.55906,finished calcs for: 1000
+2022-05-06 19:44:30,6.3993e-05,running upgrade ensembles
+2022-05-06 19:44:30,1.0871e-05,queuing 9 ensembles
+2022-05-06 19:44:30,0.00134651,subset idx:pe real name:  0:0, 26:29, 46:52, 177:BASE, 
+2022-05-06 19:44:30,2.9754e-05,subset idx:oe real name:  0:0, 26:29, 46:52, 177:BASE, 
+2022-05-06 19:44:30,0.00940525,making runs
+2022-05-06 19:54:02,572.871,processing runs
+2022-05-06 19:54:02,0.0219928,evaluting upgrade ensembles
+2022-05-06 19:54:02,3.4675e-05,last mean:  64909.8
+2022-05-06 19:54:02,1.3488e-05,last stdev:  115860
+2022-05-06 19:54:03,0.0031449,phi summary for lambda, scale fac:
+2022-05-06 19:54:03,0.00277322,phi summary for lambda, scale fac:
+2022-05-06 19:54:03,0.0027522,phi summary for lambda, scale fac:
+2022-05-06 19:54:03,0.00274975,phi summary for lambda, scale fac:
+2022-05-06 19:54:03,0.00270548,phi summary for lambda, scale fac:
+2022-05-06 19:54:03,0.00275079,phi summary for lambda, scale fac:
+2022-05-06 19:54:03,0.0027491,phi summary for lambda, scale fac:
+2022-05-06 19:54:03,0.00270425,phi summary for lambda, scale fac:
+2022-05-06 19:54:03,0.00271171,phi summary for lambda, scale fac:
+2022-05-06 19:54:03,0.00113591,phi summary for best lambda, scale fac: 
+2022-05-06 19:54:03,0.00192157,running remaining realizations for best lambda, scale:
+2022-05-06 19:54:03,1.103e-05,dropping subset idxs from remaining_pe_lam
+2022-05-06 19:54:03,0.00092343,dropping subset idxs from remaining_oe_lam
+2022-05-06 19:54:03,0.00133423,queuing 174 runs
+2022-05-06 19:54:03,0.0367507,making runs
+2022-05-06 20:25:31,1888.32,processing runs
+2022-05-06 20:25:31,0.0474608,the following par:obs realization runs failed: 182:182,183:183,
+2022-05-06 20:25:31,2.0696e-05,dropping failed realizations
+2022-05-06 20:25:31,0.00203694,the following par:obs realizations failed during evaluation of the remaining ensemble: 182:182 , 183:183 , 
+2022-05-06 20:25:31,0.00214105,assembling ensembles
+2022-05-06 20:25:31,0.00761858,updating phi
+2022-05-06 20:25:31,0.0140973,phi summary for entire ensemble using lambda,scale_fac 
+2022-05-06 20:25:31,0.0143143,last best mean phi * acceptable phi factor:  68155.3
+2022-05-06 20:25:31,2.0482e-05,current best mean phi:  2467.91
+2022-05-06 20:25:31,1.3226e-05,updating parameter ensemble
+2022-05-06 20:25:31,6.115e-06,updating parameter ensemble
+2022-05-06 20:25:31,0.000673518,updating lambda to  75
+2022-05-06 20:25:32,0.562283,phi-based termination criteria check
+2022-05-06 20:25:32,5.4316e-05,phiredstp:  0.01
+2022-05-06 20:25:32,1.3816e-05,nphistp:  3
+2022-05-06 20:25:32,1.2626e-05,nphinored (also used for consecutive bad lambda cycles):  3
+2022-05-06 20:25:32,1.5658e-05,best mean phi sequence: 
+2022-05-06 20:25:32,1.3443e-05,best phi yet:  2467.91
+2022-05-06 20:25:32,1.2431e-05,number of consecutive bad lambda testing cycles:  0
+2022-05-06 20:25:32,1.2842e-05,number of iterations satisfying phiredstp criteria:  1
+2022-05-06 20:25:32,1.2529e-05,number of iterations since best yet mean phi:  0
+2022-05-06 20:25:32,1.7005e-05,starting solve for iteration: 2
+2022-05-06 20:25:32,6.655e-06,starting solve for iteration: 2
+2022-05-06 20:25:32,1.5937e-05,current lambda:  75
+2022-05-06 20:25:32,9.496e-06,reordering variables in pe
+2022-05-06 20:25:32,0.00398969,starting REDSVD
+2022-05-06 20:25:32,0.0988854,triming REDSVD components to 58elements
+2022-05-06 20:25:32,0.000263478,done REDSVD
+2022-05-06 20:25:32,0.00196777,preparing EnsembleSolver
+2022-05-06 20:25:32,0.0013827,preparing fast-look containers for threaded localization solve
+2022-05-06 20:25:32,0.0198798,starting calcs for glm factor 7.5
+2022-05-06 20:25:32,1.6245e-05,see .log file for more details
+2022-05-06 20:25:32,0.000899011,upgrade thread progress: 0 of 1 parts done
+2022-05-06 20:25:33,1.73211,finished calcs for: 7.5
+2022-05-06 20:25:33,3.8062e-05,starting calcs for glm factor 75
+2022-05-06 20:25:33,1.013e-05,see .log file for more details
+2022-05-06 20:25:33,0.000976249,upgrade thread progress: 0 of 1 parts done
+2022-05-06 20:25:35,1.73212,finished calcs for: 75
+2022-05-06 20:25:35,3.5967e-05,starting calcs for glm factor 750
+2022-05-06 20:25:35,9.969e-06,see .log file for more details
+2022-05-06 20:25:35,0.000999892,upgrade thread progress: 0 of 1 parts done
+2022-05-06 20:25:37,1.73308,finished calcs for: 750
+2022-05-06 20:25:37,3.8397e-05,running upgrade ensembles
+2022-05-06 20:25:37,9.116e-06,queuing 9 ensembles
+2022-05-06 20:25:37,0.00106151,subset idx:pe real name:  3:BASE, 22:22, 89:99, 137:154, 
+2022-05-06 20:25:37,3.362e-05,subset idx:oe real name:  3:BASE, 22:22, 89:99, 137:154, 
+2022-05-06 20:25:37,0.00953506,making runs
+2022-05-06 20:33:46,488.964,processing runs
+2022-05-06 20:33:46,0.0239135,evaluting upgrade ensembles
+2022-05-06 20:33:46,2.4766e-05,last mean:  2467.91
+2022-05-06 20:33:46,1.3909e-05,last stdev:  884.334
+2022-05-06 20:33:46,0.00333427,phi summary for lambda, scale fac:
+2022-05-06 20:33:46,0.00282429,phi summary for lambda, scale fac:
+2022-05-06 20:33:46,0.00276817,phi summary for lambda, scale fac:
+2022-05-06 20:33:46,0.00276305,phi summary for lambda, scale fac:
+2022-05-06 20:33:46,0.0027165,phi summary for lambda, scale fac:
+2022-05-06 20:33:46,0.00272067,phi summary for lambda, scale fac:
+2022-05-06 20:33:46,0.00272017,phi summary for lambda, scale fac:
+2022-05-06 20:33:46,0.00271072,phi summary for lambda, scale fac:
+2022-05-06 20:33:46,0.00272438,phi summary for lambda, scale fac:
+2022-05-06 20:33:46,0.0012497,phi summary for best lambda, scale fac: 
+2022-05-06 20:33:46,0.00205529,running remaining realizations for best lambda, scale:
+2022-05-06 20:33:46,1.1953e-05,dropping subset idxs from remaining_pe_lam
+2022-05-06 20:33:46,0.00101851,dropping subset idxs from remaining_oe_lam
+2022-05-06 20:33:46,0.00135667,queuing 172 runs
+2022-05-06 20:33:46,0.0357926,making runs
+2022-05-06 21:05:19,1893.08,processing runs
+2022-05-06 21:05:19,0.0470608,the following par:obs realization runs failed: 24:24,42:42,47:47,
+2022-05-06 21:05:19,2.004e-05,dropping failed realizations
+2022-05-06 21:05:19,0.00224805,the following par:obs realizations failed during evaluation of the remaining ensemble: 24:24 , 42:42 , 47:47 , 
+2022-05-06 21:05:19,0.0022119,assembling ensembles
+2022-05-06 21:05:19,0.00773256,updating phi
+2022-05-06 21:05:19,0.0135902,phi summary for entire ensemble using lambda,scale_fac 
+2022-05-06 21:05:19,0.0137106,last best mean phi * acceptable phi factor:  2591.31
+2022-05-06 21:05:19,1.9735e-05,current best mean phi:  1388.72
+2022-05-06 21:05:19,1.3144e-05,updating parameter ensemble
+2022-05-06 21:05:19,6.025e-06,updating parameter ensemble
+2022-05-06 21:05:19,0.000639993,updating lambda to  5.625
+2022-05-06 21:05:20,0.556134,phi-based termination criteria check
+2022-05-06 21:05:20,4.9036e-05,phiredstp:  0.01
+2022-05-06 21:05:20,1.3729e-05,nphistp:  3
+2022-05-06 21:05:20,1.2629e-05,nphinored (also used for consecutive bad lambda cycles):  3
+2022-05-06 21:05:20,3.3459e-05,best mean phi sequence: 
+2022-05-06 21:05:20,1.6955e-05,best phi yet:  1388.72
+2022-05-06 21:05:20,1.2642e-05,number of consecutive bad lambda testing cycles:  0
+2022-05-06 21:05:20,1.293e-05,number of iterations satisfying phiredstp criteria:  1
+2022-05-06 21:05:20,1.2746e-05,number of iterations since best yet mean phi:  0

@@ -1,0 +1,1124 @@
+             pestpp-ies - a GLM iterative Ensemble Smoother
+for PEST(++) datasets 
+
+                 by the PEST++ developement team
+
+
+
+
+
+version: 5.1.13
+binary compiled on Feb 17 2022 at 10:09:56
+
+using control file: "pestpp_ies.pst"
+in directory: "/srv/common/idm/pest/queen"
+on host: "hydrolix"
+started at 05/06/22 19:07:54
+
+Note: 3 unused lines in pest control file:
+  -->  line number 6: '2.000000E+01  -3.000000E+00   3.000000E-01   1.000000E-02        -7       999          lamforgive        noderforgive' 
+  -->  line number 10: '0         0         0         0             jcosave          verboserec          jcosaveitn          reisaveitn          parsaveitn        noparsaverun' 
+  -->  line number 12: '1' 
+
+    This software has been approved for release by the
+    U.S.Geological Survey(USGS).Although the software has 
+    been subjected to rigorous review, the USGS reserves the
+    right to update the software as needed pursuant to further
+    analysisand review.No warranty, expressed or implied, is 
+    made by the USGS or the U.S.Government as to the
+    functionality of the softwareand related material nor shall
+    the fact of release constitute any such warranty.
+    Furthermore, the software is released on condition that
+    neither the USGS nor the U.S.Government shall be held
+    liable for any damages resulting from its authorized 
+    or unauthorized use.
+
+
+Case dimensions:- 
+    Number of parameters = 181
+    Number of adjustable parameters = 58
+    Number of observations = 181
+    Number of prior estimates = 0
+
+PEST Control Information
+    relparmax = 10
+    facparmax = 10
+    facorig = 0.001
+    phiredswh = 0.1
+    noptmax = 2
+    phiredstp = 0.01
+    nphistp = 3
+    nphinored = 3
+    relparstp = 0.01
+    nrelpar = 3
+
+
+    PEST++ OPTIONS: 
+
+...general options (used in multiple tools): 
+svd_pack: redsvd
+lambda_scale_fac: 0.75,1,1.1,
+forgive_unknown_args: 0
+max_run_fail: 3
+panther_poll_interval: 1
+parameter_covariance: prior_cov_matrix.jcb
+observation_covariance: 
+hotstart_resfile: 
+overdue_resched_fac: 1.15
+overdue_giveup_fac: 100
+overdue_giveup_minutes: 1e+30
+condor_submit_file: 
+tie_by_group: 0
+par_sigma_range: 4
+enforce_tied_bounds: 1
+debug_parse_only: 0
+check_tplins: 1
+fill_tpl_zeros: 0
+additional_ins_delimiters: 
+random_seed: 358183147
+num_tpl_ins_threads: 1
+save_binary: 0
+ensemble_output_precision: 6
+panther_echo: 1
+panther_agent_restart_on_error: 0
+panther_agent_no_ping_timeout_secs: -1
+panther_debug_loop: 0
+debug_check_par_en_consistency: 0
+panther_agent_freeze_on_fail: 0
+panther_transfer_on_finish: 
+panther_transfer_on_fail: 
+
+...pestpp-glm specific options:
+max_n_super: 1000000
+super_eigthresh: 1e-06
+n_iter_base: 1000000
+n_iter_super: 0
+super_relparmax: 0.1
+max_super_frz_iter: 20
+max_reg_iter: 20
+lambdas: 0.1,1,10,100,1000,
+iteration_summary: 0
+der_forgive: 1
+uncertainty: 1
+forecasts: 
+base_jacobian: 
+glm_num_reals: 0
+jac_scale: 1
+glm_normal_form: DIAG
+glm_debug_der_fail: 0
+glm_debug_lamb_fail: 0
+glm_debug_real_fail: 0
+glm_accept_mc_phi: 0
+glm_rebase_super: 0
+glm_iter_mc: 0
+glm_high_2nd_iter_phi: 0
+
+...pestpp-swp options:
+sweep_parameter_csv_file: 
+sweep_output_csv_file: sweep_out.csv
+sweep_chunk: 500
+sweep_forgive: 0
+sweep_base_run: 0
+
+...pestpp-opt options:
+opt_objective_function: 
+opt_coin_log: 1
+opt_skip_final: 0
+opt_std_weights: 0
+opt_stack_size: 0
+opt_par_stack: 
+opt_obs_stack: 
+opt_decision_variable_groups: 
+opt_external_variable_groups: 
+opt_constraint_groups: 
+opt_risk: 0.5
+opt_iter_derinc_fac: 1
+opt_direction: 1
+opt_iter_tol: 0.001
+opt_recalc_fosm_every: 1
+opt_chance_points: SINGLE
+
+...pestpp-sqp options:
+sqp_dv_en: 
+sqp_obs_restart_en: 
+sqp_num_reals: -1
+sqp_update_hessian: 0
+sqp_scale_facs:
+  1e-05
+  0.0001
+  0.01
+  0.1
+  1
+
+...pestpp-mou options:
+mou_generator: DE
+mou_population_size: 100
+mou_dv_population_file: 
+mou_obs_population_restart_file: 
+mou_objectives: 
+mou_max_archive_size: 500
+mou_risk_objective: 0
+mou_verbose_level: 1
+mou_env_selector: NSGA
+mou_mating_selector: TOURNAMENT
+mou_crossover_prob: 0.75
+mou_mutation_prob: -999
+mou_de_f: 0.8
+mou_save_population_every: -1
+mou_pso_omega: 0.7
+mou_pso_social_const: 2
+mou_pso_cognitive: 2
+mou_population_schedule: 
+mou_simplex_reflections:10
+mou_simplex_factors: 
+ 0.5
+ 0.6
+ 0.7
+ 0.8
+mou_simplex_mutation: 0
+
+...shared pestpp-ies/pestpp-da options:
+(note: 'da' args override 'ies' args when using pestpp-da)
+ies_parameter_ensemble: 
+ies_observation_ensemble: 
+ies_weights_ensemble: 
+ies_restart_parameter_ensemble: 
+ies_restart_observation_ensemble: 
+ies_use_approximate_solution: 0
+ies_lambda_mults: 0.1,1,10,
+ies_initial_lambda: 0
+ies_use_approx: 0
+ies_subset_size: 4
+ies_reg_factor: 0
+ies_verbose_level: 0
+ies_use_prior_scaling: 0
+ies_num_reals: 200
+ies_bad_phi: 1e+300
+ies_bad_phi_sigma: 1e+300
+ies_include_base: 1
+ies_use_empirical_prior: 0
+ies_group_draws: 1
+ies_enforce_bounds: 1
+ies_localizer: 
+ies_accept_phi_fac: 1.05
+ies_lambda_inc_fac: 10
+ies_lambda_dec_fac: 0.75
+ies_save_lambda_ensembles: 0
+ies_subset_how: RANDOM
+ies_localize_how: PARAMETERS
+ies_num_threads: -1
+ies_debug_fail_subset: 0
+ies_debug_fail_remainder: 0
+ies_debug_bad_phi: 0
+ies_debug_upgrade_only: 0
+ies_debug_high_subset_phi: 0
+ies_debug_high_upgrade_phi: 0
+ies_csv_by_reals: 1
+ies_autoadaloc: 0
+ies_autoadaloc_sigma_dist: 1
+ies_enforce_chglim: 0
+ies_center_on: 
+ies_no_noise: 0
+ies_drop_conflicts: 1
+ies_save_rescov:1
+ies_pdc_sigma_distance: -1
+ies_use_mda: 0
+ies_mda_init_fac: 10
+ies_mda_dec_fac: 0.5
+ies_localization_type: LOCAL
+ies_upgrades_in_memory: 1
+ies_ordered_binary: 1
+ies_multimodal_alpha: 1
+
+pestpp-sen options: 
+gsa_method: MORRIS
+gsa_morris_pooled_obs: 0
+gsa_morris_obs_sen: 1
+gsa_morris_p: 4
+gsa_morris_r: 4
+gsa_morris_delta: 0.6666
+gsa_sobol_samples: 4
+gsa_sobol_par_dist: norm
+pestpp-da options (those not shared with pestpp-ies):
+da_parameter_cycle_table: 
+da_observation_cycle_table: 
+da_hotstart_cycle: 0
+da_stop_cycle: 1000000000
+da_use_simulated_states: 1
+da_noptmax_schedule: 
+
+
+
+Model command line(s):- 
+    python3 model_run_steady.py
+
+Model interface files:-
+    template files:
+      pest_files/hk1pp.dat.tpl
+      pest_files/param.tpl
+      pest_files/qmuni.tpl
+    model input files:
+      model_params/hk1pp.dat
+      model_params/param.dat
+      model_params/qmuni.dat
+
+    instruction files:
+      pest_files/hwells.ins
+      pest_files/vlens.ins
+      pest_files/zert.ins
+      pest_files/zmuni.ins
+      pest_files/zmuni_pct.ins
+      pest_files/ztdem.ins
+      pest_files/zwells.ins
+    model output files:
+      model_outputs/hwells.dat
+      model_outputs/vlens.dat
+      model_outputs/zert.dat
+      model_outputs/zmuni.dat
+      model_outputs/zmuni_pct.dat
+      model_outputs/ztdem.dat
+      model_outputs/zwells.dat
+
+
+Parameter group information
+NAME          INCREMENT TYPE     DERIVATIVE INCREMENT    INCREMENT LOWER BOUND  FORCE CENTRAL     INCREMENT MULTIPLIER
+qmuni               ABSOLUTE                    1e-05                        0         SWITCH                        2
+hk_pp               RELATIVE                     0.01                        0         SWITCH                        2
+pargp               RELATIVE                     0.01                        0       ALWAYS_3                        2
+
+
+
+Parameter information
+NAME         TRANSFORMATION        CHANGE LIMIT  INITIAL VALUE    LOWER BOUND    UPPER BOUND        GROUP          SCALE         OFFSET  DERIVATIVE COMMAND
+alpha_l      fixed                   FACTOR              3              1              5        pargp              1              0                   1
+alpha_t      log                     FACTOR            0.1          0.001             10        pargp              1              0                   1
+hk1000       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1001       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1002       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1003       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1004       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1005       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1006       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1007       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1008       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1009       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1010       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1011       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1012       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1013       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1014       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1015       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1016       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1017       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1018       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1019       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1020       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1021       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1022       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1023       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1024       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1025       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1026       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1027       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1028       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1029       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1030       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1031       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1032       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1033       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1034       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1035       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1036       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1037       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1038       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1039       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1040       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1041       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1042       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1043       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1044       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1045       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1046       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1047       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1048       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1049       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1050       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1051       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1052       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1053       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1054       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1055       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1056       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1057       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1058       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1059       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1060       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1061       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1062       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1063       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1064       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1065       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1066       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1067       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1068       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1069       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1070       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1071       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1072       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1073       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1074       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1075       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1076       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1077       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1078       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1079       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1080       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1081       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1082       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1083       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1084       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1085       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1086       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1087       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1088       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1089       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1090       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1091       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1092       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1093       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1094       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1095       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1096       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1097       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1098       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1099       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1100       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1101       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1102       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1103       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1104       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1105       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1106       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1107       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1108       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1109       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1110       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1111       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1112       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1113       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1114       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1115       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1116       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1117       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1118       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1119       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1120       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1121       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1122       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1123       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1124       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1125       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1126       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1127       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1128       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1129       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1130       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1131       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1132       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1133       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1134       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1135       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1136       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1137       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1138       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1139       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1140       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1141       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1142       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1143       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1144       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1145       log                     FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1146       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1147       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1148       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1149       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1150       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1151       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1152       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1153       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1154       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1155       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1156       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1157       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1158       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1159       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk1160       tied                    FACTOR          4e-05          3e-06         0.0006        hk_pp              1              0                   1
+hk_dunes     log                     FACTOR          0.005          5e-05            0.5        pargp              1              0                   1
+hk_seabed    log                     FACTOR          2e-05          2e-07          0.002        pargp              1              0                   1
+hk_valley    log                     FACTOR          1e-05          1e-07          0.001        pargp              1              0                   1
+m            fixed                   FACTOR              8              5             11        pargp              1              0                   1
+ne           fixed                   FACTOR            0.3            0.2            0.4        pargp              1              0                   1
+qmuni1       fixed                   FACTOR       0.000294        1.1e-10        1.1e+10        qmuni              1              0                   1
+qmuni2       fixed                   FACTOR       8.02e-05        1.1e-10        1.1e+10        qmuni              1              0                   1
+qmuni3       fixed                   FACTOR       6.49e-05        1.1e-10        1.1e+10        qmuni              1              0                   1
+qmuni4       fixed                   FACTOR       0.000131        1.1e-10        1.1e+10        qmuni              1              0                   1
+qmuni5       fixed                   FACTOR       0.000243        1.1e-10        1.1e+10        qmuni              1              0                   1
+qmuni6       fixed                   FACTOR       4.35e-05        1.1e-10        1.1e+10        qmuni              1              0                   1
+qmuni7       fixed                   FACTOR       1.15e-06        1.1e-10        1.1e+10        qmuni              1              0                   1
+qmuni8       fixed                   FACTOR       0.000254        1.1e-10        1.1e+10        qmuni              1              0                   1
+qmuni9       fixed                   FACTOR       7.23e-05        1.1e-10        1.1e+10        qmuni              1              0                   1
+rech_mmyr    none                    FACTOR            560            360            760        pargp              1              0                   1
+slvl         fixed                   FACTOR          0.014        1.1e-10        1.1e+10        pargp              1              0                   1
+ss           fixed                   FACTOR          1e-05        3.3e-06         0.0001        pargp              1              0                   1
+sy           fixed                   FACTOR           0.15           0.06            0.3        pargp              1              0                   1
+
+
+
+Observation information
+NAME                                VALUE                GROUP              WEIGHT
+hmuni1                               1.28                hmuni              7.6626
+hmuni2                                1.3                hmuni              7.6626
+hmuni3                               1.63                hmuni             7.66259
+hmuni4                               2.52                hmuni             7.66259
+hmuni5                               1.22                hmuni              7.6626
+hmuni6                               1.33                hmuni             7.66261
+hmuni7                               1.35                hmuni             7.66261
+hmuni8                               1.21                hmuni              7.6626
+hmuni9                               1.46                hmuni              7.6626
+hpz01                                2.14                hdeep             5.10683
+hpz02                                1.97                hdeep             6.32217
+hpz03                                1.59                hdeep              8.0573
+hpz04                                1.58                hdeep             8.43013
+hpz05                                1.73                hdeep             6.36047
+hpz06                                1.08             hshallow             26.6639
+hpz07                                1.44                hdeep              3.6237
+hpz08                                1.43                hdeep             3.79702
+hpz09                                1.47             hshallow             4.59201
+hpz10                                1.43             hshallow             4.59201
+hpz11                                1.45             hshallow              26.578
+vlens                                   0               v_lens                   0
+zert01                              -13.7                 zert                 0.2
+zert02                              -13.3                 zert                 0.2
+zert03                              -29.9                 zert                 0.2
+zert04                              -42.5                 zert                 0.2
+zert05                              -50.4                 zert                 0.2
+zert06                              -54.4                 zert                 0.2
+zert07                              -53.6                 zert                 0.2
+zert08                              -76.6                 zert                 0.2
+zert09                                -72                 zert                 0.2
+zert10                              -74.9                 zert                 0.2
+zert11                              -17.2                 zert                 0.2
+zert12                              -18.7                 zert                 0.2
+zert13                              -41.1                 zert                 0.2
+zert14                              -43.2                 zert                 0.2
+zert15                              -44.4                 zert                 0.2
+zert16                              -46.5                 zert                 0.2
+zert17                              -48.1                 zert                 0.2
+zert18                              -70.4                 zert                 0.2
+zert19                              -74.8                 zert                 0.2
+zert20                              -61.3                 zert                 0.2
+zert21                              -76.2                 zert                 0.2
+zert22                              -78.3                 zert                 0.2
+zert23                              -65.7                 zert                 0.2
+zert24                              -25.3                 zert                 0.2
+zert25                              -28.2                 zert                 0.2
+zert26                              -33.3                 zert                 0.2
+zert27                              -34.7                 zert                 0.2
+zert28                              -38.5                 zert                 0.2
+zert29                              -53.7                 zert                 0.2
+zert30                              -53.6                 zert                 0.2
+zert31                              -49.9                 zert                 0.2
+zert32                              -46.9                 zert                 0.2
+zert33                              -47.3                 zert                 0.2
+zert34                              -48.4                 zert                 0.2
+zert35                                -47                 zert                 0.2
+zert36                              -40.5                 zert                 0.2
+zert37                              -32.3                 zert                 0.2
+zert38                              -25.8                 zert                 0.2
+zert39                                -37                 zert                 0.2
+zert40                              -37.8                 zert                 0.2
+zert41                                -38                 zert                 0.2
+zert42                              -38.2                 zert                 0.2
+zert43                              -39.7                 zert                 0.2
+zert44                              -42.7                 zert                 0.2
+zert45                              -46.5                 zert                 0.2
+zert46                              -49.5                 zert                 0.2
+zert47                                -51                 zert                 0.2
+zert48                              -51.2                 zert                 0.2
+zert49                              -51.2                 zert                 0.2
+zert50                              -51.7                 zert                 0.2
+zert51                              -53.2                 zert                 0.2
+zert52                              -54.3                 zert                 0.2
+zert53                              -52.8                 zert                 0.2
+zert54                              -23.9                 zert                 0.2
+zert55                              -30.8                 zert                 0.2
+zert56                              -30.9                 zert                 0.2
+zert57                              -35.1                 zert                 0.2
+zert58                              -37.2                 zert                 0.2
+zert59                              -42.5                 zert                 0.2
+zert60                              -65.7                 zert                 0.2
+zert61                              -69.5                 zert                 0.2
+zert62                              -70.7                 zert                 0.2
+zert63                              -76.6                 zert                 0.2
+zert64                              -77.3                 zert                 0.2
+zert65                              -70.4                 zert                 0.2
+zert66                              -10.6                 zert                 0.2
+zert67                                -23                 zert                 0.2
+zert68                              -20.3                 zert                 0.2
+zert69                              -32.1                 zert                 0.2
+zert70                              -39.5                 zert                 0.2
+zert71                              -40.4                 zert                 0.2
+zert72                              -40.6                 zert                 0.2
+zert73                              -40.2                 zert                 0.2
+zert74                              -56.5                 zert                 0.2
+zert75                              -25.1                 zert                 0.2
+zert76                              -29.6                 zert                 0.2
+zert77                              -29.2                 zert                 0.2
+zert78                              -31.7                 zert                 0.2
+zert79                              -59.9                 zert                 0.2
+zert80                              -11.8                 zert                 0.2
+zert81                              -34.1                 zert                 0.2
+zert82                              -36.1                 zert                 0.2
+zert83                              -38.2                 zert                 0.2
+zert84                              -38.2                 zert                 0.2
+zert85                              -35.9                 zert                 0.2
+zert86                              -33.8                 zert                 0.2
+zert87                              -47.7                 zert                 0.2
+zmuni1                                  0                zmuni                   0
+zmuni1_pct                        -20.027          l_zmuni_pct                   0
+zmuni2                                  0                zmuni                   0
+zmuni2_pct                        -21.054          l_zmuni_pct                   0
+zmuni3                                  0                zmuni                   0
+zmuni3_pct                        -22.994          l_zmuni_pct                   0
+zmuni4                                  0                zmuni                   0
+zmuni4_pct                        -11.533          l_zmuni_pct                   0
+zmuni5                                  0                zmuni                   0
+zmuni5_pct                        -20.813          l_zmuni_pct                   0
+zmuni6                                  0                zmuni                   0
+zmuni6_pct                        -18.573          l_zmuni_pct                   0
+zmuni7                                  0                zmuni                   0
+zmuni7_pct                        -32.193          l_zmuni_pct                   0
+zmuni8                                  0                zmuni                   0
+zmuni8_pct                        -28.603          l_zmuni_pct                   0
+zmuni9                                  0                zmuni                   0
+zmuni9_pct                        -24.393          l_zmuni_pct                   0
+zpz01                              -46.62               zwells            0.442805
+zpz02                              -45.35               zwells            0.628863
+zpz03                              -41.52               zwells            0.841547
+zpz04                               -33.8               zwells            0.886833
+zpz05                              -31.41               zwells            0.426134
+zpz07                              -64.24               zwells            0.301044
+zpz08                              -42.53               zwells            0.337924
+ztdem01                           -25.013                ztdem            0.266667
+ztdem02                           -47.463                ztdem            0.266667
+ztdem03                           -46.883                ztdem            0.266667
+ztdem05                           -32.413                ztdem            0.266667
+ztdem08                           -29.363                ztdem            0.266667
+ztdem12                           -40.953                ztdem            0.266667
+ztdem14                           -50.543                ztdem            0.266667
+ztdem15                           -49.253                ztdem            0.266667
+ztdem17                           -49.633                ztdem            0.266667
+ztdem20                           -31.113                ztdem            0.266667
+ztdem21                           -52.463                ztdem            0.266667
+ztdem22                           -50.553                ztdem            0.266667
+ztdem32                           -42.433                ztdem            0.266667
+ztdem33                           -44.143                ztdem            0.266667
+ztdem34                           -48.973                ztdem            0.266667
+ztdem35                           -51.323                ztdem            0.266667
+ztdem37                           -69.243                ztdem            0.266667
+ztdem41                           -45.833                ztdem            0.266667
+ztdem42                           -61.053                ztdem            0.266667
+ztdem43                           -70.463                ztdem            0.266667
+ztdem44                           -33.793                ztdem            0.266667
+ztdem45                           -30.453                ztdem            0.266667
+ztdem46                           -38.133                ztdem            0.266667
+ztdem47                           -34.863                ztdem            0.266667
+ztdem48                           -43.503                ztdem            0.266667
+ztdem49                           -45.763                ztdem            0.266667
+ztdem51                           -52.313                ztdem            0.266667
+ztdem52                           -34.473                ztdem            0.266667
+ztdem53                           -41.733                ztdem            0.266667
+ztdem54                           -42.653                ztdem            0.266667
+ztdem55                           -40.103                ztdem            0.266667
+ztdem56                           -35.313                ztdem            0.266667
+ztdem57                           -36.013                ztdem            0.266667
+ztdem58                           -35.883                ztdem            0.266667
+ztdem59                           -51.883                ztdem            0.266667
+ztdem61                           -38.133                ztdem            0.266667
+ztdem62                           -34.473                ztdem            0.266667
+ztdem63                           -55.353                ztdem            0.266667
+ztdem64                           -46.833                ztdem            0.266667
+ztdem65                           -44.223                ztdem            0.266667
+ztdem66                           -52.533                ztdem            0.266667
+ztdem68                           -23.933                ztdem            0.266667
+ztdem69                           -34.673                ztdem            0.266667
+ztdem71                           -47.183                ztdem            0.266667
+ztdem74                           -43.203                ztdem            0.266667
+ztdem75                           -34.373                ztdem            0.266667
+ztdem80                           -30.233                ztdem            0.266667
+ztdem81                           -31.273                ztdem            0.266667
+
+
+
+Prior information
+
+   no prior information provided
+
+
+
+PEST SVD Information
+    maxsing = 10000000
+    eigthresh = 1e-06
+
+
+
+
+
+...resetting max_run_fail to 1
+...resetting overdue_giveup_fac to 2.0
+...resetting overdue_resched_fac to 1.15
+
+  ---  initializing  ---  
+
+  ---  using glm algorithm  ---  
+...using REDSVD for truncated svd solve
+...maxsing: 10000000
+...eigthresh:  1e-06
+...initializing localizer
+...not using localization
+...using lambda multipliers: 0.1 , 1 , 10 , 
+...using lambda scaling factors: 0.75 , 1 , 1.1 , 
+...acceptable phi factor:  1.05
+...lambda increase factor:  10
+...lambda decrease factor:  0.75
+...max run fail:  1
+...initializing prior parameter covariance matrix
+...parcov loaded   from file prior_cov_matrix.jcb
+...initializing observation noise covariance matrix
+WARNING: Cov::try_from(): 19 extra elements in covariance matrix being drop - these are probably for fixed parameters and/or zero-weight observations
+
+...obscov loaded  from observation weights
+...using reg_factor:  0
+...drawing parameter realizations:  200
+...not using prior parameter covariance matrix scaling
+...drawing observation noise realizations:  200
+...adding 'base' parameter values to ensemble
+...adding 'base' observation values to ensemble
+checking for denormal values in pe
+...saved initial parameter ensemble to  pestpp_ies.0.par.csv
+checking for denormal values in obs + noise ensemble
+...saved obs+noise observation ensemble (obsval + noise realizations) to  pestpp_ies.obs+noise.csv
+...setting weights ensemble from control file weights
+checking for denormal values in weights ensemble
+...using subset in lambda testing, number of realizations used in subset testing:  4
+...subset how:  RANDOM
+...centering on ensemble mean vector
+...running initial ensemble of size 200
+
+  ---  the following 22 par:obs realization runs failed during evaluation of the initial parameter ensemble:
+15:15
+16:16
+20:20
+45:45
+49:49
+50:50
+59:59
+68:68
+70:70
+75:75
+83:83
+103:103
+105:105
+117:117
+121:121
+126:126
+138:138
+144:144
+160:160
+161:161
+163:163
+191:191
+  ---  
+...saved initial obs ensemble to pestpp_ies.0.obs.csv
+
+  ---  pre-drop initial phi summary  ---  
+       phi type           mean            std            min            max
+       measured        64909.8         115860        1931.28         663723
+         actual        64801.2         115908        1885.46         666117
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+...checking for prior-data conflict...
+
+  ---  initial phi summary  ---  
+       phi type           mean            std            min            max
+       measured        64909.8         115860        1931.28         663723
+         actual        64801.2         115908        1885.46         666117
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+optimal residual covariance matrix shrinkage factor : 2.48946e-07
+...using full (MAP) update solution
+...current lambda: 100
+
+  ---  initialization complete  ---  
+
+  ---  starting solve for iteration: 1  ---  
+...current lambda:  100
+...preparing fast-look containers for threaded localization solve
+...starting calcs for glm factor 10
+see .log file for more details
+...finished calcs for: 10
+...starting calcs for glm factor 100
+see .log file for more details
+...finished calcs for: 100
+...starting calcs for glm factor 1000
+see .log file for more details
+...finished calcs for: 1000
+
+  ---  running upgrade ensembles  ---  
+...subset idx:pe real name:  0:0, 26:29, 46:52, 177:BASE, 
+...subset idx:oe real name:  0:0, 26:29, 46:52, 177:BASE, 
+
+  ---  evaluting upgrade ensembles  ---  
+...last mean:  64909.8
+...last stdev:  115860
+
+  ---  phi summary for lambda, scale fac:10 , 0.75 ,   ---  
+       phi type           mean            std            min            max
+       measured        4567.52        1431.31        3485.54        6572.58
+         actual        4431.29         1501.8        3224.74        6482.32
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:10 , 1 ,   ---  
+       phi type           mean            std            min            max
+       measured        2370.96        705.318        1780.81         3393.6
+         actual        2241.61         815.03        1473.48         3393.6
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:10 , 1.1 ,   ---  
+       phi type           mean            std            min            max
+       measured         2051.2        663.154        1613.47        3017.31
+         actual        1924.72        755.185        1335.44        3017.31
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:100 , 0.75 ,   ---  
+       phi type           mean            std            min            max
+       measured        3289.25        829.275        2272.99         4114.1
+         actual        3131.24        779.895        2175.82        3792.14
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:100 , 1 ,   ---  
+       phi type           mean            std            min            max
+       measured         2023.6        347.714        1767.17        2531.41
+         actual        1864.36        445.249        1612.39        2531.41
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:100 , 1.1 ,   ---  
+       phi type           mean            std            min            max
+       measured        1908.87         267.36        1666.44        2170.86
+         actual         1749.5        396.023        1401.76        2170.86
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:1000 , 0.75 ,   ---  
+       phi type           mean            std            min            max
+       measured        5411.57        2715.51        2227.61        8857.75
+         actual         5258.9         2590.5        2123.38        8462.16
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:1000 , 1 ,   ---  
+       phi type           mean            std            min            max
+       measured        3493.45        1065.61        2113.71        4692.89
+         actual        3336.11        994.336        2002.67        4346.05
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:1000 , 1.1 ,   ---  
+       phi type           mean            std            min            max
+       measured        3126.48        480.806        2600.05        3701.85
+         actual        2967.55        439.898        2486.33        3372.76
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for best lambda, scale fac: 100 , 1.1 ,   ---  
+       phi type           mean            std            min            max
+       measured        1908.87         267.36        1666.44        2170.86
+         actual         1749.5        396.023        1401.76        2170.86
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  running remaining realizations for best lambda, scale:100 , 1.1 ,   ---  
+...the following par:obs realizations failed during evaluation of the remaining ensemble: 182:182 , 183:183 , 
+...phi summary for entire ensemble using lambda,scale_fac 100 , 1.1 , 
+       phi type           mean            std            min            max
+       measured        2467.91        884.334        1405.43        7312.58
+         actual        2330.51        892.321        1401.76        7268.27
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+...last best mean phi * acceptable phi factor:  68155.3
+...current best mean phi:  2467.91
+
+  ---  updating parameter ensemble  ---  
+
+  ---  updating lambda to  75  ---  
+
+  ---  EnsembleMethod iteration 1 report  ---  
+   number of active realizations:  176
+   number of model runs:           386
+      current obs ensemble saved to pestpp_ies.1.obs.csv
+      current par ensemble saved to pestpp_ies.1.par.csv
+       phi type           mean            std            min            max
+       measured        2467.91        884.334        1405.43        7312.58
+         actual        2330.51        892.321        1401.76        7268.27
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+optimal residual covariance matrix shrinkage factor : 6.91017e-08
+
+   ---  Parameter Group Change Summmary  ---    
+   (compared to the initial ensemble using active realizations)
+group           mean change  std change  n at/near bnds  % at/near bnds   init CV   curr CV n CV decr
+pargp               12.4623     23.9831               6               0      0.41      0.25         0
+hk_pp                   9.5          36             202               2      0.13     0.089         0
+qmuni                     0           0               0               0         0         0         0
+    Note: parameter change summary sorted according to abs 'mean change'.
+          'n CV decr' is the number of parameters with current CV less 30% of the initial CV
+
+...saved parameter change summary to pestpp_ies.1.pcs.csv
+
+  ---  phi-based termination criteria check  ---  
+...phiredstp:  0.01
+...nphistp:  3
+...nphinored (also used for consecutive bad lambda cycles):  3
+...best mean phi sequence: 64909.8 , 2467.91 , 
+...best phi yet:  2467.91
+...number of consecutive bad lambda testing cycles:  0
+...number of iterations satisfying phiredstp criteria:  1
+...number of iterations since best yet mean phi:  0
+
+  ---  starting solve for iteration: 2  ---  
+...current lambda:  75
+...preparing fast-look containers for threaded localization solve
+...starting calcs for glm factor 7.5
+see .log file for more details
+...finished calcs for: 7.5
+...starting calcs for glm factor 75
+see .log file for more details
+...finished calcs for: 75
+...starting calcs for glm factor 750
+see .log file for more details
+...finished calcs for: 750
+
+  ---  running upgrade ensembles  ---  
+...subset idx:pe real name:  3:BASE, 22:22, 89:99, 137:154, 
+...subset idx:oe real name:  3:BASE, 22:22, 89:99, 137:154, 
+
+  ---  evaluting upgrade ensembles  ---  
+...last mean:  2467.91
+...last stdev:  884.334
+
+  ---  phi summary for lambda, scale fac:7.5 , 0.75 ,   ---  
+       phi type           mean            std            min            max
+       measured        1303.82        109.941        1195.47        1450.38
+         actual        1211.07        30.2569        1177.69        1245.31
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:7.5 , 1 ,   ---  
+       phi type           mean            std            min            max
+       measured         1211.3        118.433        1089.88         1366.9
+         actual        1117.78        29.4263        1089.88        1157.66
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:7.5 , 1.1 ,   ---  
+       phi type           mean            std            min            max
+       measured        1198.73        110.914        1071.48        1338.86
+         actual        1104.78        25.2572        1071.48        1126.28
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:75 , 0.75 ,   ---  
+       phi type           mean            std            min            max
+       measured        1547.48        165.913        1331.09        1718.87
+         actual        1446.78        88.3665        1331.09        1515.87
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:75 , 1 ,   ---  
+       phi type           mean            std            min            max
+       measured         1500.1         167.69        1290.75        1689.04
+         actual        1397.76        86.4586        1290.75        1492.75
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:75 , 1.1 ,   ---  
+       phi type           mean            std            min            max
+       measured        1487.18        152.414        1300.29        1656.16
+         actual        1383.82        70.7779        1300.29        1460.47
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:750 , 0.75 ,   ---  
+       phi type           mean            std            min            max
+       measured        1757.62        163.906         1611.7        1939.56
+         actual        1659.14        142.558        1525.14        1860.09
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:750 , 1 ,   ---  
+       phi type           mean            std            min            max
+       measured         1707.2        178.336        1504.98        1864.65
+         actual        1606.93        128.035        1504.98         1774.7
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for lambda, scale fac:750 , 1.1 ,   ---  
+       phi type           mean            std            min            max
+       measured        1691.89         182.91        1472.18        1844.83
+         actual        1590.94        124.537        1472.18        1746.08
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  phi summary for best lambda, scale fac: 7.5 , 1.1 ,   ---  
+       phi type           mean            std            min            max
+       measured        1198.73        110.914        1071.48        1338.86
+         actual        1104.78        25.2572        1071.48        1126.28
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+
+  ---  running remaining realizations for best lambda, scale:7.5 , 1.1 ,   ---  
+...the following par:obs realizations failed during evaluation of the remaining ensemble: 24:24 , 42:42 , 47:47 , 
+...phi summary for entire ensemble using lambda,scale_fac 7.5 , 1.1 , 
+       phi type           mean            std            min            max
+       measured        1388.72        291.735        1056.85        3372.69
+         actual        1250.56        281.694        1003.61        3297.08
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+...last best mean phi * acceptable phi factor:  2591.31
+...current best mean phi:  1388.72
+
+  ---  updating parameter ensemble  ---  
+
+  ---  updating lambda to  5.625  ---  
+
+  ---  EnsembleMethod iteration 2 report  ---  
+   number of active realizations:  173
+   number of model runs:           591
+      current obs ensemble saved to pestpp_ies.2.obs.csv
+      current par ensemble saved to pestpp_ies.2.par.csv
+       phi type           mean            std            min            max
+       measured        1388.72        291.735        1056.85        3372.69
+         actual        1250.56        281.694        1003.61        3297.08
+     note: 'measured' phi reported above includes 
+           realizations of measurement noise, 
+           'actual' phi does not.
+
+
+optimal residual covariance matrix shrinkage factor : 2.29731e-08
+
+   ---  Parameter Group Change Summmary  ---    
+   (compared to the initial ensemble using active realizations)
+group           mean change  std change  n at/near bnds  % at/near bnds   init CV   curr CV n CV decr
+pargp               24.8782     38.6471               8               0      0.41      0.17         2
+hk_pp                    13          51             463               5      0.13      0.07         0
+qmuni                     0           0               0               0         0         0         0
+    Note: parameter change summary sorted according to abs 'mean change'.
+          'n CV decr' is the number of parameters with current CV less 30% of the initial CV
+
+...saved parameter change summary to pestpp_ies.2.pcs.csv
+
+  ---  phi-based termination criteria check  ---  
+...phiredstp:  0.01
+...nphistp:  3
+...nphinored (also used for consecutive bad lambda cycles):  3
+...best mean phi sequence: 64909.8 , 2467.91 , 1388.72 , 
+...best phi yet:  1388.72
+...number of consecutive bad lambda testing cycles:  0
+...number of iterations satisfying phiredstp criteria:  1
+...number of iterations since best yet mean phi:  0
+
+
+pestpp-ies analysis complete...
+started at 05/06/22 19:07:54
+finished at 05/06/22 21:05:22
+took 117.45 minutes

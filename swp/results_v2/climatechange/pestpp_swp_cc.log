@@ -1,0 +1,8 @@
+time,elapsed_seconds,message
+2022-05-09 03:27:34,2.6376e-05,PEST++ performance logger started
+2022-05-09 03:27:34,0.000362161,starting to process control file
+2022-05-09 03:27:34,0.00917142,finished processing control file
+2022-05-09 03:27:34,0.00338849,starting to read parameter csv file
+2022-05-09 03:27:34,0.0215722,finished reading parameter csv file
+2022-05-09 03:53:29,1554.13,starting to read parameter csv file
+2022-05-09 03:53:29,0.00224748,finished reading parameter csv file

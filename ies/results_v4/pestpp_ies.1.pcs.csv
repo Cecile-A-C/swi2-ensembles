@@ -1,0 +1,4 @@
+group,mean_change,std_change,num_at_near_bounds,percent_at_near_bounds,initial_cv,current_cv,num_cv_dec
+qmuni,0,0,0,0,0,0,0
+hk_pp,9.48232,36.1334,202,2,0.126361,0.0888987,0
+pargp,12.4623,23.9831,6,0,0.405222,0.248227,0
