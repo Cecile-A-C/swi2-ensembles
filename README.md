@@ -1,7 +1,7 @@
 # swi2-ensembles
 
 Scripts and files for the ensemble-based history matching and multiobjective optimization under uncertainty described in 
-"Cécile Coulon, Jeremy T. White, Alexandre Pryet, Laura Gatel & Jean-Michel Lemieux, A multi-objective, ensemble-based approach for pumping optimization in an island aquifer considering parameter, observation and climate uncertainty"
+"Cécile Coulon, Jeremy T. White, Alexandre Pryet, Laura Gatel & Jean-Michel Lemieux, An ensemble-based approach for pumping optimization in an island aquifer considering parameter, observation and climate uncertainty"
 
 ## File organization
 
